@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/Florian-DAUVERGNE/Florian-DAUVERGNE.github.io/static/css/main.e6c13ad2.css",
+    "main.js": "/Florian-DAUVERGNE/Florian-DAUVERGNE.github.io/static/js/main.ec6d3cb8.js",
+    "static/js/787.bc7d429a.chunk.js": "/Florian-DAUVERGNE/Florian-DAUVERGNE.github.io/static/js/787.bc7d429a.chunk.js",
+    "index.html": "/Florian-DAUVERGNE/Florian-DAUVERGNE.github.io/index.html",
+    "main.e6c13ad2.css.map": "/Florian-DAUVERGNE/Florian-DAUVERGNE.github.io/static/css/main.e6c13ad2.css.map",
+    "main.ec6d3cb8.js.map": "/Florian-DAUVERGNE/Florian-DAUVERGNE.github.io/static/js/main.ec6d3cb8.js.map",
+    "787.bc7d429a.chunk.js.map": "/Florian-DAUVERGNE/Florian-DAUVERGNE.github.io/static/js/787.bc7d429a.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e6c13ad2.css",
+    "static/js/main.ec6d3cb8.js"
+  ]
+}
