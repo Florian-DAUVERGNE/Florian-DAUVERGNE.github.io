@@ -123,7 +123,7 @@ export default function AboutSection() {
     >
       <div className="w-full max-w-[1100px] h-full m-auto flex flex-col items-center gap-24">
         <div className="relative title text-xl md:text-4xl tracking-tight font-medium w-fit dark:text-white">
-          Simplicity is the soul of efficiency.
+          L&apos;efficacité avant tout.
           <div className="absolute -right-[10px] top-2">
             <Image
               className="w-14 pointer-events-none select-none"
