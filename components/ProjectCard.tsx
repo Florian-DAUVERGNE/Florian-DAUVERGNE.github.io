@@ -94,24 +94,50 @@ export default function ProjectCard({ item }: Props) {
         </div>
 
         <div className="w-full px-4 left-[50%] -translate-x-1/2 bottom-[10%] absolute z-20 flex items-center justify-between">
-          <div className="flex w-3/4 overflow-x-scroll items-center gap-2">
-            {item.techStacks.map((tech, index) => {
-              return index % 2 === 0 ? (
-                <div
-                  key={index}
-                  className="px-2 py-[3px] shadow-sm border border-accentColor bg-white rounded-xl text-sm text-black flex justify-center items-center"
-                >
-                  {tech}
-                </div>
-              ) : (
-                <div
-                  key={index}
-                  className="px-2 py-[3px] shadow-sm bg-accentColor group-hover:border-[0.01px] rounded-xl text-sm text-white flex justify-center items-center"
-                >
-                  {tech}
-                </div>
-              )
-            })}
+          <div className="flex flex-col w-3/4 gap-2">
+            {/* Première ligne avec les 2 premières technologies */}
+            <div className="flex items-center gap-2">
+              {item.techStacks.slice(0, 2).map((tech, index) => {
+                return index % 2 === 0 ? (
+                  <div
+                    key={index}
+                    className="px-2 py-[3px] shadow-sm border border-accentColor bg-white rounded-xl text-sm text-black flex justify-center items-center"
+                  >
+                    {tech}
+                  </div>
+                ) : (
+                  <div
+                    key={index}
+                    className="px-2 py-[3px] shadow-sm bg-accentColor group-hover:border-[0.01px] rounded-xl text-sm text-white flex justify-center items-center"
+                  >
+                    {tech}
+                  </div>
+                )
+              })}
+            </div>
+            {/* Deuxième ligne avec les technologies restantes s'il y en a plus de 2 */}
+            {item.techStacks.length > 2 && (
+              <div className="flex items-center gap-2 flex-wrap">
+                {item.techStacks.slice(2).map((tech, index) => {
+                  const actualIndex = index + 2; // Ajuster l'index pour la logique de couleur
+                  return actualIndex % 2 === 0 ? (
+                    <div
+                      key={actualIndex}
+                      className="px-2 py-[3px] shadow-sm border border-accentColor bg-white rounded-xl text-sm text-black flex justify-center items-center"
+                    >
+                      {tech}
+                    </div>
+                  ) : (
+                    <div
+                      key={actualIndex}
+                      className="px-2 py-[3px] shadow-sm bg-accentColor group-hover:border-[0.01px] rounded-xl text-sm text-white flex justify-center items-center"
+                    >
+                      {tech}
+                    </div>
+                  )
+                })}
+              </div>
+            )}
           </div>
 
           {item.liveURL && (

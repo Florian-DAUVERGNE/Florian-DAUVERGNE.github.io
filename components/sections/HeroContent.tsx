@@ -74,8 +74,8 @@ Développeur fullstack passionné par l’IA, je conçois des solutions logiciel
         aria-label="Contact Me"
         className="contact_me_btn px-4 py-[6px] shadow-md mt-10 md:mt-3 group flex items-center gap-2"
       >
-        <div className="dark:text-black relative z-[3] text-sm">Contact Me</div>
-        <div className="sr-only">Contact Me</div>
+        <div className="dark:text-black relative z-[3] text-sm">Contacter moi</div>
+        <div className="sr-only">Contacter moi</div>
         <div className="contact_me_btn_overlay group-hover:opacity-100" />
         <div className="relative group overflow-hidden w-4 z-[3]">
           <div className="flex group-hover:animate-animate-frame-contact-me-btn-icon translate-x-[-100%]">

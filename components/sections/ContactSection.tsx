@@ -1,6 +1,6 @@
 "use client"
 
-import { useEffect, useRef } from "react"
+import { useEffect, useRef, useState } from "react"
 import useScrollActive from "@/hooks/useScrollActive"
 import { useSectionStore } from "@/store/section"
 import { gsap } from "gsap"
@@ -10,6 +10,17 @@ import Link from "next/link"
 export default function ContactSection() {
   gsap.registerPlugin(ScrollTrigger)
   const sectionRef = useRef(null)
+  const [copiedItem, setCopiedItem] = useState<string | null>(null)
+
+  const copyToClipboard = async (text: string, type: string) => {
+    try {
+      await navigator.clipboard.writeText(text)
+      setCopiedItem(type)
+      setTimeout(() => setCopiedItem(null), 2000) // Reset après 2 secondes
+    } catch (err) {
+      console.error('Erreur lors de la copie:', err)
+    }
+  }
 
   useEffect(() => {
     const q = gsap.utils.selector(sectionRef)
@@ -63,11 +74,86 @@ export default function ContactSection() {
             </div>
           </div>
           <div className="overflow-hidden">
-            <div className="title-animation text-5xl navlink text-accentColor">
+            <div className="title-animation text-5xl text-center text-accentColor">
               Contactez-moi !
             </div>
-            <div className="title-animation text-5xl navlink dark:text-white">
+            {/* Email cliquable */}
+            <div 
+              className="title-animation text-5xl text-center navlink dark:text-white cursor-pointer hover:text-accentColor transition-colors duration-200 group flex items-center justify-center gap-3"
+              onClick={() => copyToClipboard('florian.dauv@gmail.com', 'email')}
+              title="Cliquez pour copier l'email"
+            >
+              florian.dauv@gmail.com
+              <div className="flex items-center gap-1">
+                {copiedItem === 'email' ? (
+                  <svg 
+                    className="w-6 h-6 text-green-500"
+                    fill="none" 
+                    stroke="currentColor" 
+                    viewBox="0 0 24 24"
+                  >
+                    <path 
+                      strokeLinecap="round" 
+                      strokeLinejoin="round" 
+                      strokeWidth={2} 
+                      d="M5 13l4 4L19 7" 
+                    />
+                  </svg>
+                ) : (
+                  <svg 
+                    className="w-6 h-6 opacity-0 group-hover:opacity-100 transition-opacity duration-200 dark:text-white"
+                    fill="none" 
+                    stroke="currentColor" 
+                    viewBox="0 0 24 24"
+                  >
+                    <path 
+                      strokeLinecap="round" 
+                      strokeLinejoin="round" 
+                      strokeWidth={2} 
+                      d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" 
+                    />
+                  </svg>
+                )}
+              </div>
+            </div>
+            {/* Téléphone cliquable */}
+            <div 
+              className="title-animation text-5xl text-center navlink dark:text-white cursor-pointer hover:text-accentColor transition-colors duration-200 group flex items-center justify-center gap-3"
+              onClick={() => copyToClipboard('07 81 41 60 59', 'phone')}
+              title="Cliquez pour copier le numéro"
+            >
               07 81 41 60 59
+              <div className="flex items-center gap-1">
+                {copiedItem === 'phone' ? (
+                  <svg 
+                    className="w-6 h-6 text-green-500"
+                    fill="none" 
+                    stroke="currentColor" 
+                    viewBox="0 0 24 24"
+                  >
+                    <path 
+                      strokeLinecap="round" 
+                      strokeLinejoin="round" 
+                      strokeWidth={2} 
+                      d="M5 13l4 4L19 7" 
+                    />
+                  </svg>
+                ) : (
+                  <svg 
+                    className="w-6 h-6 opacity-0 group-hover:opacity-100 transition-opacity duration-200 dark:text-white"
+                    fill="none" 
+                    stroke="currentColor" 
+                    viewBox="0 0 24 24"
+                  >
+                    <path 
+                      strokeLinecap="round" 
+                      strokeLinejoin="round" 
+                      strokeWidth={2} 
+                      d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" 
+                    />
+                  </svg>
+                )}
+              </div>
             </div>
           </div>
         </div>

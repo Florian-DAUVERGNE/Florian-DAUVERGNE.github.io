@@ -9,6 +9,10 @@ export default function useScrollActive(ref: RefObject<HTMLElement>) {
 
       const sectionHeight = ref.current?.offsetHeight;
       const sectionTop = ref.current?.offsetTop! - 80;
+
+
+      console.log("tetst", scrollY, sectionTop, sectionHeight);
+
       if (
         scrollY > sectionTop &&
         scrollY <= sectionTop + (sectionHeight as number)
