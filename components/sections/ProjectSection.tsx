@@ -5,6 +5,8 @@ import useOnScreen from "@/hooks/useOnScreen"
 import useScrollActive from "@/hooks/useScrollActive"
 import Aquarium from "@/public/assets/projects/aquarium.png"
 import PortfolioV1 from "@/public/assets/projects/portfolio-v1.png"
+import NeuraPrice from "@/public/assets/projects/NeuraPrice.png"
+import Domotique from "@/public/assets/projects/domotique.png"
 import { useSectionStore } from "@/store/section"
 import { gsap } from "gsap"
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger"
@@ -67,13 +69,13 @@ export default function ProjectSection() {
             show={isOnScreen}
           >
             <div className="text-xl md:text-4xl tracking-tight font-medium w-fit dark:text-accentColor">
-              Featured Projects
+              Mes projets
             </div>
           </RoughNotation>
           <div ref={elementRef} className="overflow-hidden ">
             <div className="qoutes-animation  md:w-full text-center font-medium flex flex-col items-center">
-              <div>Good design is obvious. Great design is transparent.</div>
-              <div>Design is not for philosophy, it&apos;s for life.</div>
+              <div>Présentation de plusieurs projets</div>
+              <div>Personnels et professionnels</div>
             </div>
           </div>
         </div>
@@ -84,15 +86,15 @@ export default function ProjectSection() {
         </div>
 
         <div className="font-medium">
-          Explore more projects in{" "}
+          Découvrez plus de projets sur{" "}
           <Link
-            href="https://github.com/devshinthant"
+            href="https://github.com/Florian-DAUVERGNE"
             target="_blank"
-            aria-label="Expore more in my github profile"
+            aria-label="Découvrez-en plus sur mon profil github"
             rel="noopener noreferrer"
             className="text-accentColor navlink dark:hover:text-black"
           >
-            my github profile
+            mon profil GitHub
           </Link>
         </div>
       </div>
@@ -113,17 +115,16 @@ export interface Project {
 
 const projects: Project[] = [
   {
-    id: 1,
-    title: "Aquarium commandé",
-    description:
-      "Construction d'un dispositif d'aquarium intelligent avec contrôle de la température, de l'éclairage et de la qualité de l'eau via une application web.",
-    techStacks: ["JavaScript", "Arduino"],
-    image: Aquarium,
-    githubURL: "https://github.com/Florian-DAUVERGNE/Aquarium",
-    liveURL: "https://fdauvergne-aquarium.vercel.app",
-    githubApi: "https://api.github.com/repos/Florian-DAUVERGNE/Aquarium",
+   id: 1,
+   title: "NeuraPrice",
+   description:
+     "Une application dédiée à la prédiction de prix basée sur des modèles neuronaux avancés.",
+   techStacks: ["NextJS", "React", "TensorFlow.js", "Python"],
+   image: NeuraPrice,
+   githubURL: "https://github.com/Florian-DAUVERGNE/NeuraPrice",
+   liveURL: "https://fdauvergne-portfolio-v1.vercel.app",
+   githubApi: "https://api.github.com/repos/Florian-DAUVERGNE/NeuraPrice",
   },
-
   {
     id: 2,
     title: "Portfolio V1",
@@ -135,4 +136,28 @@ const projects: Project[] = [
     liveURL: "https://fdauvergne-portfolio-v1.vercel.app",
     githubApi: "https://api.github.com/repos/Florian-DAUVERGNE/Portfolio_V1",
   },
+  {
+    id: 3,
+    title: "Domotique",
+    description:
+      "Système de domotique intelligent permettant le contrôle à distance des appareils domestiques via une application web.",
+    techStacks: ["JavaScript", "Arduino"],
+    image: Domotique,
+    githubURL: "https://github.com/Florian-DAUVERGNE/Domotique",
+    liveURL: "https://fdauvergne-domotique.vercel.app/",
+    githubApi: "https://api.github.com/repos/Florian-DAUVERGNE/Domotique",
+  },
+  {
+    id: 4,
+    title: "Aquarium commandé",
+    description:
+      "Construction d'un dispositif d'aquarium intelligent avec contrôle de la température, de l'éclairage et de la qualité de l'eau via une application web.",
+    techStacks: ["JavaScript", "Arduino"],
+    image: Aquarium,
+    githubURL: "https://github.com/Florian-DAUVERGNE/Aquarium",
+    liveURL: "https://neura-price.vercel.app/",
+    githubApi: "https://api.github.com/repos/Florian-DAUVERGNE/Aquarium",
+  },
+
+
 ]
