@@ -122,7 +122,7 @@ const projects: Project[] = [
    techStacks: ["NextJS", "React", "TensorFlow.js", "Python"],
    image: NeuraPrice,
    githubURL: "https://github.com/Florian-DAUVERGNE/NeuraPrice",
-   liveURL: "https://fdauvergne-portfolio-v1.vercel.app",
+   liveURL: "https://neura-price.vercel.app/",
    githubApi: "https://api.github.com/repos/Florian-DAUVERGNE/NeuraPrice",
   },
   {
