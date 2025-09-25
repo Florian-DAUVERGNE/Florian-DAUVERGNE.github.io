@@ -22,7 +22,7 @@ export default function HeroContent() {
       },
       {
         y: 0,
-        delay: 2.2,
+        delay: 1.2,
       }
     )
     textAnimationTimeline.fromTo(
